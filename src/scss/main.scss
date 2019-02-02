@@ -54,6 +54,10 @@ $accentBlue: #65a6af;
 
 .homepage {
 
+	#BECK, #maggierogers {
+		opacity: 0;
+	}
+
 	#Tame_Impala:hover, #caamp:hover, #INCUBUS:hover, #foals:hover, #cagetheelephant:hover, #thestruts:hover {
 		path {
 			fill: $accentRed !important;

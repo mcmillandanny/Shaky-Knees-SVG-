@@ -88,6 +88,10 @@ table {
 }
 
 /* 2. Content ================================= */
+.homepage #BECK, .homepage #maggierogers {
+	opacity: 0;
+}
+
 .homepage #Tame_Impala:hover path, .homepage #caamp:hover path, .homepage #INCUBUS:hover path, .homepage #foals:hover path, .homepage #cagetheelephant:hover path, .homepage #thestruts:hover path {
 	fill: #de4344 !important;
 	animation: animate 1s infinite;
