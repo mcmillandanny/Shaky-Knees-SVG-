@@ -1,0 +1,83 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+/* 0. Reset ================================= */
+@import 'reset';
+
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+
+$accentRed: #de4344;
+$darkRed: #b13637;
+$accentBlue: #65a6af;
+
+
+@keyframes animate {
+	10%, 90% {
+	  transform: translate3d(-1px, 0, 0);
+	}
+	
+	20%, 80% {
+	  transform: translate3d(2px, 0, 0);
+	}
+  
+	30%, 50%, 70% {
+	  transform: translate3d(-4px, 0, 0);
+	}
+  
+	40%, 60% {
+	  transform: translate3d(4px, 0, 0);
+	}
+  }
+
+
+/* 2. Content ================================= */
+
+
+
+.homepage {
+
+	#Tame_Impala:hover, #caamp:hover, #INCUBUS:hover, #foals:hover, #cagetheelephant:hover, #thestruts:hover {
+		path {
+			fill: $accentRed !important;
+			animation: animate 1s infinite;	
+			transform: translate3d(0, 0, 0);
+			backface-visibility: hidden;
+			perspective: 1000px;
+		}
+	}
+
+	#maggierogers:hover, #jimjames:hover, #BECK:hover, #grouplove:hover, #interpol:hover{
+		path {
+			fill: $accentBlue !important;
+			animation: animate 1s infinite;	
+			transform: translate3d(0, 0, 0);
+			backface-visibility: hidden;
+			perspective: 1000px;
+		}
+	}
+	
+	#DAY_2:hover {
+		path {
+			fill: red !important;
+			animation: animate 1s infinite;	
+		}
+	}
+}
