@@ -52,8 +52,12 @@ $accentBlue: #65a6af;
 
 
 
-.homepage {
+.header {
+	position: absolute;
+}
 
+.homepage {
+	// display: none;
 	#BECK, #maggierogers, #caamp, #jimjames, #foals, #grouplove, #thestruts, #interpol {
 		opacity: 0;
 	}
@@ -84,4 +88,9 @@ $accentBlue: #65a6af;
 			animation: animate 1s infinite;	
 		}
 	}
+}
+
+.day-1-bands {
+		display: none;
+
 }
