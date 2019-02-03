@@ -57,7 +57,7 @@ $accentBlue: #65a6af;
 }
 
 .homepage {
-	// display: none;
+	
 	#BECK, #maggierogers, #caamp, #jimjames, #foals, #grouplove, #thestruts, #interpol {
 		opacity: 0;
 	}
@@ -72,7 +72,7 @@ $accentBlue: #65a6af;
 		}
 	}
 
-	#maggierogers:hover, #jimjames:hover, #BECK:hover, #grouplove:hover, #interpol:hover{
+	#maggierogers:hover, #jimjames:hover, #BECK:hover, #grouplove:hover, #interpol:hover {
 		path {
 			fill: $accentBlue !important;
 			animation: animate 1s infinite;	
@@ -81,16 +81,18 @@ $accentBlue: #65a6af;
 			perspective: 1000px;
 		}
 	}
-	
-	#DAY_2:hover {
+
+
+.day-1-bands, .day-3-bands, .day-2-bands {
+	display: none;
+
+}
+.day-1-bands {
+
+	#day1_tearsforfears:hover {
 		path {
 			fill: red !important;
-			animation: animate 1s infinite;	
 		}
 	}
 }
 
-.day-1-bands {
-		display: none;
-
-}

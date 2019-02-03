@@ -112,13 +112,16 @@ table {
 	perspective: 1000px;
 }
 
-.homepage #DAY_2:hover path {
-	fill: red !important;
-	animation: animate 1s infinite;
+.homepage .incubus-btn {
+	cursor: pointer;
 }
 
-.day-1-bands {
+.day-1-bands, .day-3-bands, .day-2-bands {
 	display: none;
+}
+
+.day-1-bands #day1_tearsforfears:hover path {
+	fill: red !important;
 }
 
 /*# sourceMappingURL=main.css.map */

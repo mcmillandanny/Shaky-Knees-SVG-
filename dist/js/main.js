@@ -2,83 +2,80 @@
 
 console.log('Shaky Knees');
 
-var incubusAnimateIn = new TimelineMax({ delay: 1.5 });
+var incubusAnimateIn = new TimelineMax({ delay: .5 });
 var tameAnimateIn = new TimelineMax({});
-var beckAnimateIn = new TimelineMax({ delay: 1.3 });
-var cageAnimateIn = new TimelineMax({ delay: 1.9 });
+var beckAnimateIn = new TimelineMax({ delay: .9 });
+var cageAnimateIn = new TimelineMax({ delay: .8 });
 var switchBands = new TimelineMax({});
 
-var otherBandsAnimatein = new TimelineMax({ delay: 4 });
+var otherBandsAnimatein = new TimelineMax({ delay: 1 });
 
-tameAnimateIn.from("#Tame_Impala g path", .7, {
+tameAnimateIn.from("#Tame_Impala g path", .4, {
     y: "-400px",
     scale: .1
 });
 
-beckAnimateIn.to("#BECK", 1, {
+beckAnimateIn.to("#BECK", .3, {
     opacity: 1
 
 });
 
-beckAnimateIn.from("#BECK", 1, {
+beckAnimateIn.from("#BECK", .3, {
     scale: 1.25
 });
 
-incubusAnimateIn.from("#INCUBUS g path", .8, {
+incubusAnimateIn.from("#INCUBUS g path", .4, {
     x: "900px"
 });
 
-cageAnimateIn.from("#cagetheelephant g path", 2, {
+otherBandsAnimatein.to("#maggierogers", .3, {
+    opacity: 1
+});
+
+otherBandsAnimatein.to("#caamp", .3, {
+    opacity: 1
+});
+
+otherBandsAnimatein.to("#jimjames", .3, {
+    opacity: 1
+});
+
+otherBandsAnimatein.to("#foals", .3, {
+    opacity: 1
+});
+
+otherBandsAnimatein.to("#grouplove", .3, {
+    opacity: 1
+});
+
+otherBandsAnimatein.to("#thestruts", .3, {
+    opacity: 1
+});
+
+otherBandsAnimatein.to("#interpol", .3, {
+    opacity: 1
+});
+
+cageAnimateIn.from("#cagetheelephant g path", .1, {
     y: "900px"
-});
-
-otherBandsAnimatein.to("#maggierogers", .5, {
-    opacity: 1
-});
-
-otherBandsAnimatein.to("#caamp", .5, {
-    opacity: 1
-});
-
-otherBandsAnimatein.to("#jimjames", .5, {
-    opacity: 1
-});
-
-otherBandsAnimatein.to("#foals", .5, {
-    opacity: 1
-});
-
-otherBandsAnimatein.to("#grouplove", .5, {
-    opacity: 1
-});
-
-otherBandsAnimatein.to("#thestruts", .5, {
-    opacity: 1
-});
-
-otherBandsAnimatein.to("#interpol", .5, {
-    opacity: 1
 });
 
 var day1Btn = document.querySelector('.day1-btn');
 var day1Bands = document.querySelector('.day-1-bands');
 var homepageBands = document.querySelector('.homepage');
+var day2Btn = document.querySelector('.day2-btn');
+var day2Bands = document.querySelector('.day-2-bands');
+var day3Btn = document.querySelector('.day3-btn');
+var day3Bands = document.querySelector('.day-3-bands');
 
-console.log(day1Bands);
+function animateOutInDay1() {
 
-function animateOutIn() {
-
-    switchBands.to("#Tame_Impala, #interpol", .5, {
-        y: "200px",
-        ease: Circ.easeOut,
-        display: 'none'
+    switchBands.to(".day-3-bands", .2, {
+        display: "none"
     });
 
-    switchBands.to("#maggierogers, #cagetheelephant", .5, {
-        x: "-200px",
-        ease: Circ.easeOut, y: -500,
-        display: 'none'
-
+    switchBands.to(".day-2-bands", .2, {
+        display: "none"
     });
 
     switchBands.to(".day-1-bands", .1, {
@@ -86,16 +83,10 @@ function animateOutIn() {
         opacity: 0
     });
 
-    switchBands.to("#caamp,#jimjames, #foals, #grouplove, #BECK ", .5, {
+    switchBands.to("#caamp,#jimjames, #foals, #grouplove, #BECK, #thestruts, #rose, #lightning3, #INCUBUS, #maggierogers, #cagetheelephant, #Tame_Impala, #interpol ", .5, {
         y: "500px",
         ease: CustomEase.create("custom", "M0,0 C0,0 0.023,0.173 0.045,0.276 0.05,0.301 0.058,0.319 0.07,0.34 0.077,0.355 0.183,0.537 0.198,0.542 0.45,0.627 0.586,0.52 0.875,0.612 0.891,0.617 0.904,0.623 0.915,0.634 0.928,0.648 0.936,0.664 0.945,0.683 0.955,0.707 0.96,0.725 0.965,0.751 0.981,0.846 1,1 1,1"),
         display: 'none'
-    });
-
-    switchBands.to("#thestruts, #rose, #lightning3, #INCUBUS", .4, {
-        opacity: 0,
-        display: 'none'
-
     });
 
     switchBands.to(".homepage", .1, {
@@ -111,29 +102,52 @@ function animateOutIn() {
     switchBands.to(".day-1-bands", .3, {
         y: "0px"
     });
-
-    // switchBands.to(".homepage", .3, {
-    //     y: "2000px",
-    //     opacity: 0,
-    //     display: "none"
-    // });
-
-    // switchBands.to("#INCUBUS", 1, {
-    //     display: "block"
-    // })
-
-    // switchBands.to(".day-1-bands", 1, {
-    //     display: "block",
-    //     y: "0px"
-    // });
 }
 
-// function dayOnetoggle() {
-//     animateOut();
+day1Btn.addEventListener('click', animateOutInDay1);
 
-//     homepageBands.style.display = "none";
-//     day1Bands.style.display = "block";
-// }
+function animateOutInDay2() {
+    switchBands.to(".homepage", .2, {
+        display: "none"
+    });
 
-day1Btn.addEventListener('click', animateOutIn);
+    switchBands.to(".day-1-bands", .2, {
+        display: "none"
+    });
+
+    switchBands.to(".day-3-bands", .2, {
+        display: "none"
+    });
+
+    switchBands.to(".day-2-bands", 2, {
+        display: "block"
+    });
+}
+
+day2Btn.addEventListener('click', animateOutInDay2);
+
+function animateOutInDay3() {
+    switchBands.to(".homepage", .2, {
+        display: "none"
+    });
+    switchBands.to(".day-1-bands", .2, {
+        display: "none"
+    });
+
+    switchBands.to(".day-2-bands", .2, {
+        display: "none"
+    });
+
+    switchBands.to(".day-3-bands", 2, {
+        display: "block"
+    });
+}
+
+day3Btn.addEventListener('click', animateOutInDay3);
+
+var btn = document.querySelector('.incubus-btn');
+
+function testBtn() {
+    console.log("Being clicked");
+}
 //# sourceMappingURL=main.js.map
