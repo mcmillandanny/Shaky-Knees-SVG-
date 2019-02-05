@@ -159,4 +159,8 @@ table {
 	transition: .3s ease-in-out;
 }
 
+.home-btn {
+	z-index: 1;
+}
+
 /*# sourceMappingURL=main.css.map */
