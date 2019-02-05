@@ -86,6 +86,7 @@ function loadHome() {
     switchBands.to("#caamp,#jimjames, #foals, #grouplove, #BECK, #thestruts, #rose, #lightning3, #INCUBUS, #maggierogers, #cagetheelephant, #Tame_Impala, #interpol ", .2, {
         ease: CustomEase.create("custom", "M0,0 C0,0 0.023,0.173 0.045,0.276 0.05,0.301 0.058,0.319 0.07,0.34 0.077,0.355 0.183,0.537 0.198,0.542 0.45,0.627 0.586,0.52 0.875,0.612 0.891,0.617 0.904,0.623 0.915,0.634 0.928,0.648 0.936,0.664 0.945,0.683 0.955,0.707 0.96,0.725 0.965,0.751 0.981,0.846 1,1 1,1"),
         display: 'block'
+
     });
 }
 
@@ -94,6 +95,10 @@ homeBtn.addEventListener('click', loadHome);
 function animateOutInDay1() {
 
     switchBands.to(".day-2-bands", .2, {
+        display: "none"
+    });
+
+    switchBands.to(".day-3-bands", .2, {
         display: "none"
     });
 
@@ -163,6 +168,7 @@ function animateOutInDay3() {
     switchBands.to("#caamp,#jimjames, #foals, #grouplove, #BECK, #thestruts, #rose, #lightning3, #INCUBUS, #maggierogers, #cagetheelephant, #Tame_Impala, #interpol ", .2, {
         ease: CustomEase.create("custom", "M0,0 C0,0 0.023,0.173 0.045,0.276 0.05,0.301 0.058,0.319 0.07,0.34 0.077,0.355 0.183,0.537 0.198,0.542 0.45,0.627 0.586,0.52 0.875,0.612 0.891,0.617 0.904,0.623 0.915,0.634 0.928,0.648 0.936,0.664 0.945,0.683 0.955,0.707 0.96,0.725 0.965,0.751 0.981,0.846 1,1 1,1"),
         display: 'none'
+
     });
 
     switchBands.to(".day-1-bands", .2, {
@@ -190,11 +196,40 @@ function animateOutInDay3() {
 
 day3Btn.addEventListener('click', animateOutInDay3);
 
+var bodyWrapper = document.querySelector(".svg-wrapper");
+var footerBtn = document.querySelector(".footer-btn");
+var menu = document.querySelector(".slide-in-menu");
 var btn = document.querySelector('#BECK');
 var lightbox = document.querySelector('.lightbox');
 var lightboxBg = document.querySelector(".lightbox-bg");
 var videoTag = document.querySelector('video');
 var videoAnimate = new TimelineMax({});
+var menuAnimate = new TimelineMax({});
+
+function openMenu() {
+
+    menuAnimate.to(bodyWrapper, .3, {
+        x: "-1000px",
+        display: "none",
+        ease: Power1.easeOut
+    });
+
+    menuAnimate.to(menu, .7, {
+        display: "block",
+        position: "absolute",
+        top: "0%",
+        left: "0%",
+        y: "0px"
+
+    });
+    // bodyWrapper.style.display = "none";
+    // menu.style.display = "block";
+    // menu.style.position = "absolute";
+    // menu.style.top = "0%";
+    // menu.style.left = "0%";
+}
+
+footerBtn.addEventListener("click", openMenu);
 
 function animateVideoIn() {
     videoAnimate.from(".videos", 1, {});

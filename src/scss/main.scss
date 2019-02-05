@@ -59,14 +59,6 @@ $accentBlue: #65a6af;
 	position: relative;
 	z-index: -1;
 }
-
-.day1-btn {
-	position: relative;
-	z-index: 1;
-	path {
-		fill: red !important;
-	}
-}
 	
 	#BECK, #maggierogers, #caamp, #jimjames, #foals, #grouplove, #thestruts, #interpol {
 		opacity: 0;
@@ -103,6 +95,21 @@ $accentBlue: #65a6af;
 
 }
 
+.day1-btn:hover, .day2-btn:hover {
+	path {
+		fill: $accentBlue !important;
+	}
+}
+
+	.day3-btn:hover {
+	path {
+		fill: $accentRed !important;
+	}
+}
+
+
+
+
 
 .lightbox-bg {
 	display: none;
@@ -130,5 +137,10 @@ $accentBlue: #65a6af;
 
 .home-btn {
 	z-index: 1;
+}
+
+.slide-in-menu {
+	transform: translateY(-5000px);
+	display: none;
 }
 	
