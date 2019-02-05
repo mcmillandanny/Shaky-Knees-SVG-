@@ -69,7 +69,7 @@ var day2Btn = document.querySelector('.day2-btn');
 var day2Bands = document.querySelector('.day-2-bands');
 var day3Btn = document.querySelector('.day3-btn');
 var day3Bands = document.querySelector('.day-3-bands');
-
+console.log(day1Btn)
 
 function animateOutInDay1() {
     
@@ -99,7 +99,7 @@ function animateOutInDay1() {
 
     switchBands.from(".day-1-bands", .3, {
         opacity: 1,
-        y: "-500px",
+        y: "-100px",
         ease: Elastic.easeOut.config(1, 0.3),
     })    
 
@@ -150,9 +150,40 @@ function animateOutInDay3() {
 day3Btn.addEventListener('click', animateOutInDay3);
 
 
-let btn = document.querySelector('.incubus-btn');
+let btn = document.querySelector('#BECK');
+var lightbox = document.querySelector('.lightbox');
+var lightboxBg = document.querySelector(".lightbox-bg")
+let videoTag = document.querySelector('video')
+var videoAnimate = new TimelineMax({});
 
-function testBtn() {
-    console.log("Being clicked");
+
+
+function animateVideoIn() {
+    videoAnimate.from(".videos", 1, {
+        
+    })
 }
+
+
+function changeVideoURL() {
+    animateVideoIn();
+    lightbox.style.display = "block";
+    lightboxBg.style.display = "block";
+    videoTag.src = "dist/videos/beck-vid.mp4";
+    videoTag.play()
+
+}
+
+window.addEventListener("click", (e) => {
+    if (e.target === lightboxBg && lightbox) {
+        lightboxBg.style.display = "none";
+        lightbox.style.display = "none";
+        videoTag.pause();
+    }
+})
+
+btn.addEventListener('click', changeVideoURL);
+
+
+//when beck is clicked change url
 

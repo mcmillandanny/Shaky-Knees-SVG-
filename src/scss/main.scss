@@ -28,6 +28,10 @@ $accentRed: #de4344;
 $darkRed: #b13637;
 $accentBlue: #65a6af;
 
+.svg-wrapper {
+	position: relative;
+
+}
 
 @keyframes animate {
 	10%, 90% {
@@ -51,18 +55,29 @@ $accentBlue: #65a6af;
 /* 2. Content ================================= */
 
 
-
-.header {
-	position: absolute;
+#lightning2 {
+	position: relative;
+	z-index: -1;
 }
 
-.homepage {
+.day1-btn {
+	position: relative;
+	z-index: 1;
+	path {
+		fill: red !important;
+	}
+}
 	
 	#BECK, #maggierogers, #caamp, #jimjames, #foals, #grouplove, #thestruts, #interpol {
 		opacity: 0;
 	}
 
-	#Tame_Impala:hover, #caamp:hover, #INCUBUS:hover, #foals:hover, #cagetheelephant:hover, #thestruts:hover {
+	#Tame_Impala:hover, 
+	#caamp:hover, 
+	#INCUBUS:hover, 
+	#foals:hover, 
+	#cagetheelephant:hover, 
+	#thestruts:hover {
 		path {
 			fill: $accentRed !important;
 			animation: animate 1s infinite;	
@@ -87,12 +102,28 @@ $accentBlue: #65a6af;
 	display: none;
 
 }
-.day-1-bands {
 
-	#day1_tearsforfears:hover {
-		path {
-			fill: red !important;
-		}
-	}
+
+.lightbox-bg {
+	display: none;
+	z-index: 1;
+	left: 0%;
+	top: 0%;
+	position: fixed;
+	width: 100%;
+	background: black;
+	opacity: .8;
+	height: 100%;
 }
-
+.lightbox {
+	z-index: 1;
+	display: none;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%, -50%); 
+	position: fixed;
+	width: 50%;
+	height: 50%;
+	transition: .3s ease-in-out;
+}
+	

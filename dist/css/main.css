@@ -72,6 +72,10 @@ table {
 	box-sizing: border-box;
 }
 
+.svg-wrapper {
+	position: relative;
+}
+
 @keyframes animate {
 	10%, 90% {
 		transform: translate3d(-1px, 0, 0);
@@ -88,15 +92,30 @@ table {
 }
 
 /* 2. Content ================================= */
-.header {
-	position: absolute;
+#lightning2 {
+	position: relative;
+	z-index: -1;
 }
 
-.homepage #BECK, .homepage #maggierogers, .homepage #caamp, .homepage #jimjames, .homepage #foals, .homepage #grouplove, .homepage #thestruts, .homepage #interpol {
+.day1-btn {
+	position: relative;
+	z-index: 1;
+}
+
+.day1-btn path {
+	fill: red !important;
+}
+
+#BECK, #maggierogers, #caamp, #jimjames, #foals, #grouplove, #thestruts, #interpol {
 	opacity: 0;
 }
 
-.homepage #Tame_Impala:hover path, .homepage #caamp:hover path, .homepage #INCUBUS:hover path, .homepage #foals:hover path, .homepage #cagetheelephant:hover path, .homepage #thestruts:hover path {
+#Tame_Impala:hover path,
+#caamp:hover path,
+#INCUBUS:hover path,
+#foals:hover path,
+#cagetheelephant:hover path,
+#thestruts:hover path {
 	fill: #de4344 !important;
 	animation: animate 1s infinite;
 	transform: translate3d(0, 0, 0);
@@ -104,7 +123,7 @@ table {
 	perspective: 1000px;
 }
 
-.homepage #maggierogers:hover path, .homepage #jimjames:hover path, .homepage #BECK:hover path, .homepage #grouplove:hover path, .homepage #interpol:hover path {
+#maggierogers:hover path, #jimjames:hover path, #BECK:hover path, #grouplove:hover path, #interpol:hover path {
 	fill: #65a6af !important;
 	animation: animate 1s infinite;
 	transform: translate3d(0, 0, 0);
@@ -112,16 +131,32 @@ table {
 	perspective: 1000px;
 }
 
-.homepage .incubus-btn {
-	cursor: pointer;
-}
-
 .day-1-bands, .day-3-bands, .day-2-bands {
 	display: none;
 }
 
-.day-1-bands #day1_tearsforfears:hover path {
-	fill: red !important;
+.lightbox-bg {
+	display: none;
+	z-index: 1;
+	left: 0%;
+	top: 0%;
+	position: fixed;
+	width: 100%;
+	background: black;
+	opacity: .8;
+	height: 100%;
+}
+
+.lightbox {
+	z-index: 1;
+	display: none;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: fixed;
+	width: 50%;
+	height: 50%;
+	transition: .3s ease-in-out;
 }
 
 /*# sourceMappingURL=main.css.map */
