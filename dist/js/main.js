@@ -156,10 +156,6 @@ function animateOutInDay2() {
         y: "-1000px",
         ease: Elastic.easeOut.config(1, 0.3)
     });
-
-    // switchBands.to(".day-2-bands", .3, {
-    //     y: "0px"
-    // })
 }
 
 day2Btn.addEventListener('click', animateOutInDay2);
@@ -189,9 +185,10 @@ function animateOutInDay3() {
         ease: Elastic.easeOut.config(1, 0.3)
     });
 
-    // switchBands.to(".day-3-bands", .3, {
-    //     y: "0px"
-    // })
+    switchBands.to(menu, .3, {
+        y: "0px",
+        x: "0px"
+    });
 }
 
 day3Btn.addEventListener('click', animateOutInDay3);
@@ -202,7 +199,6 @@ var menu = document.querySelector(".slide-in-menu");
 var btn = document.querySelector('#BECK');
 var lightbox = document.querySelector('.lightbox');
 var lightboxBg = document.querySelector(".lightbox-bg");
-var videoTag = document.querySelector('video');
 var videoAnimate = new TimelineMax({});
 var menuAnimate = new TimelineMax({});
 
@@ -222,26 +218,203 @@ function openMenu() {
         y: "0px"
 
     });
-    // bodyWrapper.style.display = "none";
-    // menu.style.display = "block";
-    // menu.style.position = "absolute";
-    // menu.style.top = "0%";
-    // menu.style.left = "0%";
+
+    switchBands.to(".day-1-bands", .01, {
+        display: "none"
+    });
+    switchBands.to(".day-2-bands", .01, {
+        display: "none"
+    });
+    switchBands.to(".day-3-bands", .01, {
+        display: "none"
+    });
 }
 
 footerBtn.addEventListener("click", openMenu);
 
-function animateVideoIn() {
-    videoAnimate.from(".videos", 1, {});
+var tixAndInfoHover = document.querySelectorAll("#tickets_and_information path");
+var tixInfo = document.querySelector("#tickets_and_information");
+var fillTixAndInfo = new TimelineMax({});
+
+function loopOverTixText() {
+    tixAndInfoHover.forEach(function (letter) {
+        tixInfo.addEventListener("mouseover", function () {
+            fillTixAndInfo.to(letter, .03, {
+                fill: "#65a6af"
+            });
+            tixInfo.addEventListener("mouseout", function () {
+                fillTixAndInfo.to(letter, .03, {
+                    fill: "white"
+                });
+            });
+        });
+    });
+}
+loopOverTixText();
+
+var aniHomeBtns = new TimelineMax({});
+
+var day1MenuBtn = document.querySelector(".day1-menu-btn");
+var day2MenuBtn = document.querySelector(".day2-menu-btn");
+var day3MenuBtn = document.querySelector(".day3-menu-btn");
+
+function animateDay1In() {
+    aniHomeBtns.to(menu, .3, {
+        display: 'none',
+        x: "1000px"
+    });
+
+    aniHomeBtns.to(".svg-wrapper", 1, {
+        display: "block",
+        opacity: 1,
+        x: "0px"
+    });
+    switchBands.to("#caamp,#jimjames, #foals, #grouplove, #BECK, #thestruts, #rose, #lightning3, #INCUBUS, #maggierogers, #cagetheelephant, #Tame_Impala, #interpol ", .001, {
+        ease: CustomEase.create("custom", "M0,0 C0,0 0.023,0.173 0.045,0.276 0.05,0.301 0.058,0.319 0.07,0.34 0.077,0.355 0.183,0.537 0.198,0.542 0.45,0.627 0.586,0.52 0.875,0.612 0.891,0.617 0.904,0.623 0.915,0.634 0.928,0.648 0.936,0.664 0.945,0.683 0.955,0.707 0.96,0.725 0.965,0.751 0.981,0.846 1,1 1,1"),
+        display: 'none'
+    });
+
+    switchBands.to(".day-1-bands", .2, {
+        display: "block"
+    });
+
+    aniHomeBtns.to(menu, .3, {
+        x: "0px"
+    });
+};
+
+function animateDay2In() {
+    aniHomeBtns.to(menu, .3, {
+        display: 'none',
+        x: "1000px"
+    });
+
+    aniHomeBtns.to(".svg-wrapper", 1, {
+        display: "block",
+        opacity: 1,
+        x: "0px"
+    });
+    switchBands.to("#caamp,#jimjames, #foals, #grouplove, #BECK, #thestruts, #rose, #lightning3, #INCUBUS, #maggierogers, #cagetheelephant, #Tame_Impala, #interpol ", .001, {
+        ease: CustomEase.create("custom", "M0,0 C0,0 0.023,0.173 0.045,0.276 0.05,0.301 0.058,0.319 0.07,0.34 0.077,0.355 0.183,0.537 0.198,0.542 0.45,0.627 0.586,0.52 0.875,0.612 0.891,0.617 0.904,0.623 0.915,0.634 0.928,0.648 0.936,0.664 0.945,0.683 0.955,0.707 0.96,0.725 0.965,0.751 0.981,0.846 1,1 1,1"),
+        display: 'none'
+    });
+
+    switchBands.to(".day-2-bands", .2, {
+        display: "block"
+    });
+
+    aniHomeBtns.to(menu, .3, {
+        x: "0px"
+    });
+};
+
+function animateDay3In() {
+    aniHomeBtns.to(menu, .3, {
+        display: 'none',
+        x: "1000px"
+    });
+
+    aniHomeBtns.to(".svg-wrapper", 1, {
+        display: "block",
+        opacity: 1,
+        x: "0px"
+    });
+    switchBands.to("#caamp,#jimjames, #foals, #grouplove, #BECK, #thestruts, #rose, #lightning3, #INCUBUS, #maggierogers, #cagetheelephant, #Tame_Impala, #interpol ", .001, {
+        ease: CustomEase.create("custom", "M0,0 C0,0 0.023,0.173 0.045,0.276 0.05,0.301 0.058,0.319 0.07,0.34 0.077,0.355 0.183,0.537 0.198,0.542 0.45,0.627 0.586,0.52 0.875,0.612 0.891,0.617 0.904,0.623 0.915,0.634 0.928,0.648 0.936,0.664 0.945,0.683 0.955,0.707 0.96,0.725 0.965,0.751 0.981,0.846 1,1 1,1"),
+        display: 'none'
+    });
+
+    switchBands.to(".day-3-bands", .2, {
+        display: "block"
+    });
+    aniHomeBtns.to(menu, .3, {
+        x: "0px"
+    });
+};
+
+day1MenuBtn.addEventListener("click", animateDay1In);
+day2MenuBtn.addEventListener("click", animateDay2In);
+day3MenuBtn.addEventListener("click", animateDay3In);
+
+var backBtn = document.querySelector(".back-btn");
+var backbtnTween = new TimelineMax({});
+
+function animateHomeIn() {
+    aniHomeBtns.to(menu, .3, {
+        display: 'none',
+        x: "1400px"
+    });
+
+    aniHomeBtns.to(".svg-wrapper", 1, {
+        display: "block",
+        opacity: 1,
+        x: "0px"
+    });
+    switchBands.to("#caamp,#jimjames, #foals, #grouplove, #BECK, #thestruts, #rose, #lightning3, #INCUBUS, #maggierogers, #cagetheelephant, #Tame_Impala, #interpol ", .3, {
+        ease: CustomEase.create("custom", "M0,0 C0,0 0.023,0.173 0.045,0.276 0.05,0.301 0.058,0.319 0.07,0.34 0.077,0.355 0.183,0.537 0.198,0.542 0.45,0.627 0.586,0.52 0.875,0.612 0.891,0.617 0.904,0.623 0.915,0.634 0.928,0.648 0.936,0.664 0.945,0.683 0.955,0.707 0.96,0.725 0.965,0.751 0.981,0.846 1,1 1,1"),
+        display: 'block'
+    });
+    aniHomeBtns.to(menu, .3, {
+        x: "0px"
+    });
 }
 
-function changeVideoURL() {
-    animateVideoIn();
-    lightbox.style.display = "block";
-    lightboxBg.style.display = "block";
-    videoTag.src = "dist/videos/beck-vid.mp4";
-    videoTag.play();
+backBtn.addEventListener("click", animateHomeIn);
+
+var beck = document.querySelector(".beck-btn");
+var incubus = document.querySelector(".incubus-btn");
+var tame = document.querySelector(".tame-btn");
+var maggie = document.querySelector(".maggie-btn");
+var caaamp = document.querySelector(".caamp-btn");
+var jim = document.querySelector(".jim-btn");
+var foals = document.querySelector(".foals-btn");
+var grouplove = document.querySelector(".grouplove-btn");
+var cage = document.querySelector(".cage-btn");
+var interpol = document.querySelector(".interpol-btn");
+var struts = document.querySelector(".struts-btn");
+
+// let artistClicked = document.querySelectorAll(".video-play");
+
+
+var videoChange = document.querySelector("body");
+var videoTag = document.querySelector('video');
+
+function animateVideoIn() {
+    videoAnimate.from(".videos", .7, {
+        ease: Bounce.easeOut,
+        y: -500
+
+    });
 }
+
+// function changeVideoURL() {
+//     artistClicked.forEach(function(artist) {
+//         artist.addEventListener("click", function() {
+//             if (artist.classList.contains("beck-btn")) {
+//                 console.log("beck clicked")
+//                 // videoTag.src = "dist/videos/beck-vid.mp4";
+//                 // videoTag.play()
+//             }
+//             else if (artist.classList.contains("incubus-btn")) {
+//                 console.log("incubus clciked");
+//             }
+//             else if (artist.classList.contains("tame-btn")) {
+//                 console.log("tame cclicked")
+//             }
+//         })
+//     })
+// check if the artist clicked has the right class on it
+// if the artist is clicked change the video src file to the right artist
+
+// animateVideoIn();
+// lightbox.style.display = "block";
+//  lightboxBg.style.display = "block";
+
+// }
+
+
+// videoChange.addEventListener('click', changeVideoURL);
+
 
 window.addEventListener("click", function (e) {
     if (e.target === lightboxBg && lightbox) {
@@ -251,5 +424,87 @@ window.addEventListener("click", function (e) {
     }
 });
 
-btn.addEventListener('click', changeVideoURL);
+beck.addEventListener("click", function () {
+    animateVideoIn();
+    lightbox.style.display = "block";
+    lightboxBg.style.display = "block";
+    videoTag.src = "dist/videos/beck-vid.mp4";
+    videoTag.play();
+});
+
+incubus.addEventListener("click", function () {
+    animateVideoIn();
+    lightbox.style.display = "block";
+    lightboxBg.style.display = "block";
+    videoTag.src = "dist/videos/incubus-vid.mp4";
+    videoTag.play();
+});
+
+tame.addEventListener("click", function () {
+    animateVideoIn();
+    lightbox.style.display = "block";
+    lightboxBg.style.display = "block";
+    videoTag.src = "dist/videos/tame-vid.mp4";
+    videoTag.play();
+});
+
+maggie.addEventListener("click", function () {
+    animateVideoIn();
+    lightbox.style.display = "block";
+    lightboxBg.style.display = "block";
+    videoTag.src = "dist/videos/maggie-vid.mp4";
+    videoTag.play();
+});
+
+caamp.addEventListener("click", function () {
+    animateVideoIn();
+    lightbox.style.display = "block";
+    lightboxBg.style.display = "block";
+    videoTag.src = "dist/videos/caamp-vid.mp4";
+    videoTag.play();
+});
+jim.addEventListener("click", function () {
+    animateVideoIn();
+    lightbox.style.display = "block";
+    lightboxBg.style.display = "block";
+    videoTag.src = "dist/videos/jim-vid.mp4";
+    videoTag.play();
+});
+
+foals.addEventListener("click", function () {
+    animateVideoIn();
+    lightbox.style.display = "block";
+    lightboxBg.style.display = "block";
+    videoTag.src = "dist/videos/foals-vid.mp4";
+    videoTag.play();
+});
+
+grouplove.addEventListener("click", function () {
+    animateVideoIn();
+    lightbox.style.display = "block";
+    lightboxBg.style.display = "block";
+    videoTag.src = "dist/videos/grouplove-vid.mp4";
+    videoTag.play();
+});
+cage.addEventListener("click", function () {
+    animateVideoIn();
+    lightbox.style.display = "block";
+    lightboxBg.style.display = "block";
+    videoTag.src = "dist/videos/cage-vid.mp4";
+    videoTag.play();
+});
+interpol.addEventListener("click", function () {
+    animateVideoIn();
+    lightbox.style.display = "block";
+    lightboxBg.style.display = "block";
+    videoTag.src = "dist/videos/interpol-vid.mp4";
+    videoTag.play();
+});
+struts.addEventListener("click", function () {
+    animateVideoIn();
+    lightbox.style.display = "block";
+    lightboxBg.style.display = "block";
+    videoTag.src = "dist/videos/struts-vid.mp4";
+    videoTag.play();
+});
 //# sourceMappingURL=main.js.map

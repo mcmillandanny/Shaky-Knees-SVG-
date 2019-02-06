@@ -167,4 +167,28 @@ table {
 	display: none;
 }
 
+.day1-menu-btn:hover path,
+.day2-menu-btn:hover path,
+.day3-menu-btn:hover path {
+	fill: white !important;
+}
+
+.back-btn:hover path {
+	fill: white !important;
+}
+
+.incubus-btn,
+.beck-btn,
+.tame-btn,
+.maggie-btn,
+.caamp-btn,
+.jim-btn,
+.foals-btn,
+.grouplove-btn,
+.cage-btn,
+.interpol-btn,
+.struts-btn {
+	cursor: pointer;
+}
+
 /*# sourceMappingURL=main.css.map */
